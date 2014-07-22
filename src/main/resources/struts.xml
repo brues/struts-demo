@@ -6,9 +6,27 @@
 
 <struts>
 
+
+    <package name="/" namespace="/" extends="struts-default">
+        <action name="index" class="com.struts.index.action.IndexAction" method="index">
+            <result name="index">/index.jsp</result>
+        </action>
+    </package>
+
     <package name="test" namespace="/test" extends="struts-default">
         <action name="test" class="com.struts.test.action.TestAction" method="test">
             <result name="test">/test.jsp</result>
+        </action>
+    </package>
+
+
+    <package name="upload" namespace="/upload" extends="struts-default">
+        <action name="upload" class="com.struts.upload.action.UploadAction" method="upload">
+            <result name="upload">/upload.jsp</result>
+        </action>
+
+        <action name="uploadImg" class="com.struts.upload.action.UploadAction" method="uploadImg">
+            <result name="uploadImg">/upload.jsp</result>
         </action>
     </package>
 
