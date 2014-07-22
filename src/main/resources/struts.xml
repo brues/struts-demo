@@ -21,12 +21,23 @@
 
 
     <package name="upload" namespace="/upload" extends="struts-default">
+
+        <result-types>
+            <result-type name="json" class="org.apache.struts2.json.JSONResult"/>
+        </result-types>
+
         <action name="upload" class="com.struts.upload.action.UploadAction" method="upload">
             <result name="upload">/upload.jsp</result>
         </action>
 
         <action name="uploadImg" class="com.struts.upload.action.UploadAction" method="uploadImg">
             <result name="uploadImg">/upload.jsp</result>
+        </action>
+
+        <action name="ajaxUpload" class="com.struts.upload.action.UploadAction" method="ajaxUpload">
+            <result name="success" type="json">
+                <param name="root">json</param>
+            </result>
         </action>
     </package>
 
